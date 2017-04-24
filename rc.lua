@@ -234,6 +234,15 @@ root.buttons(awful.util.table.join(
 -- }}}
 
 -- {{{ Key bindings
+cnfrm = "echo 'No\nYes' | dmenu -p 'Really quit awesome and log out?'"
+
+quit = function()
+    if awful.util.pread(cnfrm):sub(1, 3) == "Yes" then
+        awesome.quit()
+    end
+end
+
+
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
@@ -268,7 +277,7 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit),
+    awful.key({ modkey, "Shift"   }, "q", quit),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
