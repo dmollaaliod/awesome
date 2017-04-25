@@ -481,6 +481,7 @@ do
   local cmds =
     {
         "dropbox start",
+	"xautolock -time 10 -locker 'gnome-screensaver-command --lock'",
 	"nm-applet"
     }
 
