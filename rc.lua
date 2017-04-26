@@ -482,6 +482,7 @@ do
     {
         "dropbox start",
 	"xautolock -time 10 -locker 'gnome-screensaver-command --lock'",
+	"xset dpms 600",
 	"nm-applet"
     }
 
