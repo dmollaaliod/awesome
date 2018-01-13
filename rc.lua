@@ -577,8 +577,9 @@ do
     {
         "dropbox start",
 	"xautolock -time 10 -locker 'gnome-screensaver-command --lock'",
-	"xset dpms 600",
-	"nm-applet"
+	"xset dpms 600", 
+	"nm-applet",
+	"via-ui"
     }
 
   for _,i in pairs(cmds) do
